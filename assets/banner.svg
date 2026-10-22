@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 280" width="100%" height="100%">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e17" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#070a10" />
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.05" />
+    </linearGradient>
+    <pattern id="cadGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(56, 189, 248, 0.07)" stroke-width="1" />
+    </pattern>
+    <pattern id="dotGrid" width="15" height="15" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.75" fill="rgba(129, 140, 248, 0.12)" />
+    </pattern>
+    
+    <style>
+      .wireframe-spin {
+        transform-origin: 760px 140px;
+        animation: spin 24s linear infinite;
+      }
+      .pulse-glow {
+        animation: pulse 4s ease-in-out infinite alternate;
+      }
+      .float-badge {
+        animation: float 5s ease-in-out infinite alternate;
+      }
+      .dash-flow {
+        stroke-dasharray: 6 4;
+        animation: dashFlow 12s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes pulse {
+        0% { opacity: 0.3; transform: scale(0.96); }
+        100% { opacity: 0.7; transform: scale(1.04); }
+      }
+      @keyframes dashFlow {
+        to { stroke-dashoffset: -100; }
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(-4px); }
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="920" height="280" rx="16" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="1.5" />
+  
+  <!-- Subtle Grids -->
+  <rect width="920" height="280" rx="16" fill="url(#cadGrid)" />
+  <rect width="920" height="280" rx="16" fill="url(#dotGrid)" />
+
+  <!-- Ambient Glow Behind Right Side Dynamic Geometry -->
+  <circle cx="760" cy="140" r="110" fill="url(#glowGrad)" class="pulse-glow" filter="blur(15px)" />
+
+  <!-- Dynamic Parametric 3D Wireframe Geometry -->
+  <g class="wireframe-spin">
+    <!-- Isometric Outer Hexagonal Solid Prism -->
+    <polygon points="760,60 835,100 835,180 760,220 685,180 685,100" fill="rgba(56, 189, 248, 0.04)" stroke="#38bdf8" stroke-width="1.4" opacity="0.8" />
+    <polygon points="760,85 815,115 815,165 760,195 705,165 705,115" fill="none" stroke="#818cf8" stroke-width="1" stroke-dasharray="3 3" opacity="0.6" />
+    
+    <!-- Coordinate / B-Rep Internal Edges -->
+    <line x1="760" y1="60" x2="760" y2="140" stroke="#38bdf8" stroke-width="1.2" opacity="0.7" />
+    <line x1="835" y1="100" x2="760" y2="140" stroke="#38bdf8" stroke-width="1.2" opacity="0.7" />
+    <line x1="685" y1="100" x2="760" y2="140" stroke="#38bdf8" stroke-width="1.2" opacity="0.7" />
+    <line x1="760" y1="140" x2="760" y2="220" stroke="#c084fc" stroke-width="1.5" opacity="0.9" />
+
+    <!-- Isometric Coordinate Axis Nodes -->
+    <circle cx="760" cy="60" r="3" fill="#38bdf8" />
+    <circle cx="835" cy="100" r="3" fill="#38bdf8" />
+    <circle cx="835" cy="180" r="3" fill="#38bdf8" />
+    <circle cx="760" cy="220" r="3.5" fill="#c084fc" />
+    <circle cx="685" cy="180" r="3" fill="#38bdf8" />
+    <circle cx="685" cy="100" r="3" fill="#38bdf8" />
+    <circle cx="760" cy="140" r="4" fill="#67e8f9" />
+  </g>
+
+  <!-- Dynamic Dimension Lines & Parametric Constraints on the Right -->
+  <g opacity="0.75" class="dash-flow">
+    <!-- Parametric Dimension Arc -->
+    <path d="M 660,65 A 90 90 0 0 1 860,65" fill="none" stroke="#67e8f9" stroke-width="1.2" />
+    <path d="M 650,215 A 110 110 0 0 0 870,215" fill="none" stroke="#a855f7" stroke-width="1.2" />
+  </g>
+  <text x="760" y="48" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#38bdf8" text-anchor="middle" letter-spacing="1">R = 48.00 mm [B-REP]</text>
+  <text x="760" y="246" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#c084fc" text-anchor="middle" letter-spacing="1">PARAMETRIC ⟂ HISTORY</text>
+
+  <!-- Left / Foreground Content (Crisp, High Visibility, Unobstructed) -->
+  <g transform="translate(48, 0)">
+    
+    <!-- Top Category Tag -->
+    <g transform="translate(0, 48)">
+      <rect width="180" height="26" rx="13" fill="rgba(56, 189, 248, 0.12)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1" />
+      <circle cx="14" cy="13" r="4" fill="#38bdf8" />
+      <text x="26" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#38bdf8" letter-spacing="0.8">ENGINEERING &amp; CAD</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="112" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="34" font-weight="800" fill="url(#titleGrad)" letter-spacing="-0.5">
+      Awesome Parametric 3D CAD
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="146" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#94a3b8">
+      Curated Ecosystem of SaaS Platforms, B-Rep Kernels &amp; Code-CAD Modeler Engines
+    </text>
+
+    <!-- Feature Badges Row -->
+    <g transform="translate(0, 182)" class="float-badge">
+      <!-- Badge 1: Feature-History -->
+      <g transform="translate(0, 0)">
+        <rect width="138" height="30" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="12" y="19" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">📐 Feature History</text>
+      </g>
+      <!-- Badge 2: B-Rep Kernels -->
+      <g transform="translate(148, 0)">
+        <rect width="124" height="30" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="12" y="19" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">⚙️ B-Rep Solids</text>
+      </g>
+      <!-- Badge 3: Browser & Cloud -->
+      <g transform="translate(282, 0)">
+        <rect width="134" height="30" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="12" y="19" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">🌐 Cloud &amp; WASM</text>
+      </g>
+      <!-- Badge 4: Code-CAD -->
+      <g transform="translate(426, 0)">
+        <rect width="122" height="30" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="12" y="19" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">💻 Code-Driven</text>
+      </g>
+    </g>
+
+    <!-- Secondary Meta / Trust line -->
+    <text x="0" y="242" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#64748b">
+      Enterprise SaaS Solutions • Open-Source Kernels • Generative &amp; AI-Assisted Design
+    </text>
+
+  </g>
+</svg>
